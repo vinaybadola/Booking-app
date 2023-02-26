@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.js";
 const Navbar = () => {
   const {user} = useContext(AuthContext);
-  // I can use Navigate too.. :(
-    
   function logout(e){ 
     e.preventDefault()
     localStorage.clear();
