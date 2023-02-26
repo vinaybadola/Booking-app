@@ -4,6 +4,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.js";
 const Navbar = () => {
   const {user} = useContext(AuthContext);
+  function logout(e){ 
+    e.preventDefault()
+    localStorage.clear();
+    window.location.href="/";
+
+    
+  }
 
   return (
     <div className="navbar">
@@ -17,6 +24,7 @@ const Navbar = () => {
                 <button className="navButton">Login</button>
             </div>
             )}
+             {user?  <button onClick={logout} className="navButton1">Logout</button> : "" }
         </div>
     </div>
   );
